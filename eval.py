@@ -16,7 +16,7 @@ qg_batch_size = int(qg_batch_size) if qg_batch_size is not None else None
 clf_batch_size = os.getenv("CLF_BATCH_SIZE")
 clf_batch_size = int(clf_batch_size) if clf_batch_size is not None else None
 
-questeval = QuestEval(isCuda=isCuda, use_cache=False,
+questeval = QuestEval(no_cuda=(not isCuda), use_cache=False,
                      qg_batch_size=qg_batch_size,
                      clf_batch_size=clf_batch_size
                      )
